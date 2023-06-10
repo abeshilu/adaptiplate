@@ -121,7 +121,7 @@ function Search() {
     setFilter(filter);
   };
 
-  const handleNewSearch = async (optionalFilter = filter) => {
+  const handleNewSearch = async (optionalFilter = filter, event) => {
     event.preventDefault();
     setLoading(true);
     const input = document.querySelector('input[name="searchInput"]').value;
