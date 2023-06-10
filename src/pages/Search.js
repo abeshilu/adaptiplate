@@ -121,7 +121,7 @@ function Search() {
     setFilter(filter);
   };
 
-  const handleNewSearch = async (optionalFilter = filter, event) => {
+  const handleNewSearch = async (event, optionalFilter) => {
     event.preventDefault();
     setLoading(true);
     const input = document.querySelector('input[name="searchInput"]').value;
@@ -229,22 +229,22 @@ function Search() {
             </Link> */}
           </Button>
           <DropdownButton variant="outline-secondary" id="filterBtn" title={<span className="material-symbols-outlined">filter_list</span>}>
-            <Dropdown.Item onClick={() => handleNewSearch("Vegetarian")} className={filter === "Vegetarian" ? "selected-filter" : ""}>
+            <Dropdown.Item onClick={(e) => handleNewSearch(e, "Vegetarian")} className={filter === "Vegetarian" ? "selected-filter" : ""}>
               Vegetarian
             </Dropdown.Item>
-            <Dropdown.Item onClick={() => handleNewSearch("Vegan")} className={filter === "Vegan" ? "selected-filter" : ""}>
+            <Dropdown.Item onClick={(e) => handleNewSearch(e, "Vegan")} className={filter === "Vegan" ? "selected-filter" : ""}>
               Vegan
             </Dropdown.Item>
-            <Dropdown.Item onClick={() => handleNewSearch("Gluten Free")} className={filter === "Gluten Free" ? "selected-filter" : ""}>
+            <Dropdown.Item onClick={(e) => handleNewSearch(e, "Gluten Free")} className={filter === "Gluten Free" ? "selected-filter" : ""}>
               Gluten Free
             </Dropdown.Item>
-            <Dropdown.Item onClick={() => handleNewSearch("Low FODMAP")} className={filter === "Low FODMAP" ? "selected-filter" : ""}>
+            <Dropdown.Item onClick={(e) => handleNewSearch(e, "Low FODMAP")} className={filter === "Low FODMAP" ? "selected-filter" : ""}>
               Low FODMAP
             </Dropdown.Item>
-            <Dropdown.Item onClick={() => handleNewSearch("Pescatarian")} className={filter === "Pescatarian" ? "selected-filter" : ""}>
+            <Dropdown.Item onClick={(e) => handleNewSearch(e, "Pescatarian")} className={filter === "Pescatarian" ? "selected-filter" : ""}>
               Pescatarian
             </Dropdown.Item>
-            <Dropdown.Item onClick={() => handleNewSearch("Paleo")} className={filter === "Paleo" ? "selected-filter" : ""}>
+            <Dropdown.Item onClick={(e) => handleNewSearch(e, "Paleo")} className={filter === "Paleo" ? "selected-filter" : ""}>
               Paleo
             </Dropdown.Item>
             {/* <Dropdown.Item onClick={() => handleNewSearch( "" )}>
